@@ -1,0 +1,11 @@
+- Hibernate Persistence Context
+	* Transient
+	* Persistent
+	* Detached
+	* Removed
+- get vs load
+- save vs update vs persist
+- saveOrUpdate vs merge
+- cascading
+
+

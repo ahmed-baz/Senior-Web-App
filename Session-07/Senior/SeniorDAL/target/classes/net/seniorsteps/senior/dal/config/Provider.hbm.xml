@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.Provider" optimistic-lock="version" table="provider">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="nameAr" type="string">
+      <column name="name_ar" not-null="true" unique="true"/>
+    </property>
+    <property name="nameEn" type="string">
+      <column name="name_en" not-null="true" unique="true"/>
+    </property>
+    <property name="hotline" type="string">
+      <column length="15" name="hotline"/>
+    </property>
+    <property name="logoPathAr" type="string">
+      <column name="logo_path_ar"/>
+    </property>
+    <property name="logoPathEn" type="string">
+      <column name="logo_path_en"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="categories" table="category">
+      <key>
+        <column name="provider_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.Category"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="branches" table="branch">
+      <key>
+        <column name="provider_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.Branch"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="providerUsers" table="provider_user">
+      <key>
+        <column name="provider_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.ProviderUser"/>
+    </set>
+  </class>
+</hibernate-mapping>

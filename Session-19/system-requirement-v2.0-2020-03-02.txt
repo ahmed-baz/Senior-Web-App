@@ -1,0 +1,57 @@
+Consumer App	(Mob)	Native (Android, iOS, Windows) / 
+						Cross Platform (Cordova, Ionic)(HTML, CSS, JS)
+						+ RESTful API
+						
+Provider App	(Web)	RESTful API + Angular/React/PHP / JSF + PrimeFaces
+Admin App		(Web)	Servlet + JSP + JSTL
+
+Service: Food Ordering / Pharamcy Ordering / Supermarket Ordering
+
+Rules
+*1. Providers are in fixed locations
+*2. Provider may have more than one branch
+*3. Provider sold items 1 levels of categorization
+*4. Each Provider branch delivers to specific areas
+*5. Each Provider branch has one phone number, 
+   and each Provider has one hot line working 24/7
+*6. Each Provider branch has different working hours, but all branches work daily
+
+Consumer App Features
+1. Register (name, phone, email, password)
+2. Login (email or phone, password)
+3. Show Providers List by area
+4. Show Provider menu
+5. Create Order from specific Provider
+	* define items and quantities
+	* view price, total price, delivery fees
+	* expected time arrival (ETA)
+	* delivery address
+6. track your order status
+
+Provider App Features
+1. Authentication Login/Logout as specific branch
+2. Authorization (BranchUser or ProviderUser)
+3. Branch User : CRUD operations deliveryAreas
+4. CRUD Operations : Menu (Categories, Products)
+5. CRUD Operations : Branches (deliverAreas)
+6. Show new orders
+7. View speicific order details
+8. Change order status (accepted, in progress, shipped, delivered, cancnelled)
+
+
+Admin App Features
+1. CRUD Operations for : Providers, its branches, deliveryAreas and users
+2. CRUD Operations for : Cities, Areas
+3. Monitoring Orders, Specific Actions
+3. Admin User Authentication (Login/Logout)
+4. Home Page (Dashboard)
+
+
+
+
+
+
+
+
+
+

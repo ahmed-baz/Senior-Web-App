@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.Branch" optimistic-lock="version" table="branch">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Area" fetch="select" name="area">
+      <column name="area_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Provider" fetch="select" name="provider">
+      <column name="provider_id" not-null="true"/>
+    </many-to-one>
+    <property name="nameAr" type="string">
+      <column name="name_ar" not-null="true"/>
+    </property>
+    <property name="nameEn" type="string">
+      <column name="name_en" not-null="true"/>
+    </property>
+    <property name="openAt" type="time">
+      <column length="8" name="open_at" not-null="true"/>
+    </property>
+    <property name="closeAt" type="time">
+      <column length="8" name="close_at" not-null="true"/>
+    </property>
+    <property name="phone" type="string">
+      <column length="20" name="phone"/>
+    </property>
+    <property name="lat" type="big_decimal">
+      <column name="lat" precision="10" scale="8"/>
+    </property>
+    <property name="lng" type="big_decimal">
+      <column name="lng" precision="11" scale="8"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="deliveryAreas" table="delivery_area">
+      <key>
+        <column name="branch_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.DeliveryArea"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="providerUsers" table="provider_user">
+      <key>
+        <column name="branch_id"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.ProviderUser"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="orders" table="order">
+      <key>
+        <column name="branch_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.Order"/>
+    </set>
+  </class>
+</hibernate-mapping>

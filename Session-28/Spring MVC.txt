@@ -1,0 +1,17 @@
+Spring Web MVC
+1.DispatcherServlet(delegates to special beans)
+2.ServletContext (Presention > Integration(controller) + view)
+3.RootContext(BL+Repos)
+4.URLMapping
+
+--------------------------------------------
+HandlerMapping:Maps incoming web requests to handlers and pre- and post-processors
+HandlerAdapter:Invokes the handler which resolves arguments and dependencies, 
+                such as annotated arguments for URL-mapped controller method endpoints
+HandlerExceptionResolver:Allows programmatic handling of exceptions and maps exceptions to views
+ViewResolver:Resolves logical view names to view instances
+LocaleResolver:Resolves the client’s locale in order to enable internationalization
+LocaleContextResolver:A richer extension of LocaleResolver, with timezone information
+ThemeResolver:Resolves themes configured in your app for enhanced user experience
+MultipartResolver:Handles multipart file uploads as part of HTTP requests
+FlashMapManager:Manages FlashMap instances that store temporary Flash attributes between requests redirected from one another

@@ -1,0 +1,9 @@
+Topics
+	Hibernate Mapping Using HBM Configuration
+	Hibernate Mapping Using Annotation
+	
+Questions
+	1. Should any modifications at database level, enforce us to do a reverse engineering process ?
+	2. How does Hibernate Forwared Engineer ?
+	3. What are Hibernate Mapping Data Types ? 
+	4. How are many-to-many & one-to-one relations mapped in both XML & Annotation Configurations?

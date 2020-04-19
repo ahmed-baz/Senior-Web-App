@@ -1,0 +1,4 @@
+net\seniorsteps\senior\web\AuthManager.class
+net\seniorsteps\senior\web\ListAllCitiesServlet.class
+net\seniorsteps\senior\web\LoginServlet.class
+net\seniorsteps\senior\web\AddCityServlet.class

@@ -1,0 +1,14 @@
+1. update pom.xml file with dependencies
+	* spring-mvc
+	* spirng-context
+	* jstl
+	* bll project
+2. create web.xml file
+	* define web context : SpringDispatcherServlet
+	* define root context: ContextLoadListener
+3. create mvc-spring-context.xml file (Web Context)
+	* mvc:annotation-driven
+	* define viewResolver bean
+4. create core-spring-context.xml file (Root Context)
+	* import bll-spring-context
+5. create controllers & views

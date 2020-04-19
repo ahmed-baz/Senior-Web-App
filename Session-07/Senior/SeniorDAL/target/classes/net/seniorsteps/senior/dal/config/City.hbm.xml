@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.City" optimistic-lock="version" table="city">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="nameAr" type="string">
+      <column length="100" name="name_ar" not-null="true" unique="true"/>
+    </property>
+    <property name="nameEn" type="string">
+      <column length="100" name="name_en" not-null="true" unique="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="areas" table="area">
+      <key>
+        <column name="city_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.Area"/>
+    </set>
+  </class>
+</hibernate-mapping>

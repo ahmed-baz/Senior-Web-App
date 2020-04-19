@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.Product" optimistic-lock="version" table="product">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Category" fetch="select" name="category">
+      <column name="category_id" not-null="true"/>
+    </many-to-one>
+    <property name="nameAr" type="string">
+      <column name="name_ar" not-null="true"/>
+    </property>
+    <property name="nameEn" type="string">
+      <column name="name_en" not-null="true"/>
+    </property>
+    <property name="price" type="float">
+      <column name="price" not-null="true" precision="12" scale="0"/>
+    </property>
+    <property name="descriptionAr" type="string">
+      <column length="65535" name="description_ar"/>
+    </property>
+    <property name="descriptionEn" type="string">
+      <column length="65535" name="description_en"/>
+    </property>
+    <property name="imagePath" type="string">
+      <column name="image_path"/>
+    </property>
+    <property name="active" type="byte">
+      <column name="active" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="orderItems" table="order_item">
+      <key>
+        <column name="product_id" not-null="true"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.OrderItem"/>
+    </set>
+  </class>
+</hibernate-mapping>

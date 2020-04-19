@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3308/senior_app?zeroDateTimeBehavior=convertToNull</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<mapping resource="net/seniorsteps/senior/dal/config/Category.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/DeliveryArea.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/ConsumerAddress.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Order.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Branch.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Area.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/City.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Consumer.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Product.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/AdminUser.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/ProviderUser.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/Provider.hbm.xml"/>
+		<mapping resource="net/seniorsteps/senior/dal/config/OrderItem.hbm.xml"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.OrderItem"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Category"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.ProviderUser"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.AdminUser"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.City"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.DeliveryArea"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Branch"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Order"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Provider"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Consumer"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.ConsumerAddress"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Product"/>
+		<mapping class="net.seniorsteps.senior.dal.entity.annotation.Area"/>
+	</session-factory>
+</hibernate-configuration>

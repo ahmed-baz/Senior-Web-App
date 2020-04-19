@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.ConsumerAddress" optimistic-lock="version" table="consumer_address">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Area" fetch="select" name="area">
+      <column name="area_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Consumer" fetch="select" name="consumer">
+      <column name="consumer_id" not-null="true"/>
+    </many-to-one>
+    <property name="street" type="string">
+      <column length="100" name="street" not-null="true"/>
+    </property>
+    <property name="building" type="string">
+      <column length="100" name="building" not-null="true"/>
+    </property>
+    <property name="floor" type="string">
+      <column length="100" name="floor" not-null="true"/>
+    </property>
+    <property name="flat" type="string">
+      <column length="100" name="flat" not-null="true"/>
+    </property>
+    <property name="landmark" type="string">
+      <column name="landmark"/>
+    </property>
+    <property name="lat" type="big_decimal">
+      <column name="lat" precision="10" scale="8"/>
+    </property>
+    <property name="lng" type="big_decimal">
+      <column name="lng" precision="11" scale="8"/>
+    </property>
+    <property name="label" type="string">
+      <column length="100" name="label"/>
+    </property>
+    <property name="active" type="byte">
+      <column name="active" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="orders" table="order">
+      <key>
+        <column name="consumer_address_id"/>
+      </key>
+      <one-to-many class="net.seniorsteps.senior.dal.entity.Order"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.DeliveryArea" optimistic-lock="version" table="delivery_area">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Area" fetch="select" name="area">
+      <column name="area_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="net.seniorsteps.senior.dal.entity.Branch" fetch="select" name="branch">
+      <column name="branch_id" not-null="true"/>
+    </many-to-one>
+    <property name="deliveryFees" type="float">
+      <column name="delivery_fees" not-null="true" precision="12" scale="0"/>
+    </property>
+    <property name="deliverInMinutes" type="int">
+      <column name="deliver_in_minutes" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

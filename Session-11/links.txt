@@ -1,0 +1,2 @@
+baeldung.com/hibernate-criteria-queries
+javarevisited.blogsport.com/2018/07/top-30-java-phone-interview-questions.html

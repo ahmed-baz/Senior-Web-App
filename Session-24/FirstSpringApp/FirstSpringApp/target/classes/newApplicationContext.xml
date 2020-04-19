@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation= "http://www.springframework.org/schema/beans 
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+">
+    <bean id="studentManager" class="net.seniorsteps.spring.StudentManager"> 
+        <!--<property name="name" value="Senior Steps" />--> 
+        <!--<constructor-arg value="321" type="int"/>-->
+        <constructor-arg value="Last" type="java.lang.String" index="1"/>
+        <constructor-arg value="First" type="java.lang.String" index="0"/>
+        <!--<property name="departmentBean" ref="departmentBean" />--> 
+        <!--<property name="departmentBean" ref="departmentBean" />--> 
+    </bean>
+    
+    <bean id="studentRepo" class="net.seniorsteps.spring.StudentRepo" scope="prototype">
+        <property name="name" value="Computer Science" /> 
+    </bean>
+    
+    <!--    <bean id="repo1" class="net.seniorsteps.spring.StudentRepo">
+        <property name="name" value="Information Technology" /> 
+    </bean>-->
+    
+    <bean id="studentTransformer" class="net.seniorsteps.spring.StudentTransformer">
+<!--        <constructor-arg value="Physics" type="java.lang.String" index="0"/>-->
+        <!--<property name="name" value="Physics" />--> 
+    </bean>
+    
+</beans>

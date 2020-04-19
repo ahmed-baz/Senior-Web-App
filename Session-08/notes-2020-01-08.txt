@@ -1,0 +1,18 @@
+
+Hibernate Doc URL :
+		https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html
+		
+Topics : 
+	- Mapping Configurations
+		* embeddable, embedded
+		* inhertance (single_table, joined_table, table_per_class, superMappingClass)
+		* associations (1-to-1, 1-to-m, m-to-1, m-to-m)
+		* lazy vs eager
+	- session.save()
+	- transaction (begin, commit, rollback)
+	
+Questions
+	- find vs get vs load
+	- save vs update vs persiste vs merge vs saveOrUpdate
+	- try delete & update city
+	- try save, delete & update area

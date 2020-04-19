@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 6, 2020 7:40:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class catalog="senior_app" name="net.seniorsteps.senior.dal.entity.Consumer" optimistic-lock="version" table="consumer">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"/>
+			<generator class="identity"/>
+		</id>
+		<property name="phone" type="string">
+			<column length="20" name="phone" not-null="true" unique="true"/>
+		</property>
+		<property name="email" type="string">
+			<column length="100" name="email" not-null="true" unique="true"/>
+		</property>
+		<property name="password" type="string">
+			<column name="password" not-null="true"/>
+		</property>
+		<property name="fullname" type="string">
+			<column name="fullname" not-null="true"/>
+		</property>
+		<property name="gender" type="string">
+			<column length="20" name="gender"/>
+		</property>
+		<set fetch="select" inverse="true" lazy="true" name="consumerAddresses" table="consumer_address">
+			<key>
+				<column name="consumer_id" not-null="true"/>
+			</key>
+			<one-to-many class="net.seniorsteps.senior.dal.entity.ConsumerAddress"/>
+		</set>
+		<set fetch="select" inverse="true" lazy="true" name="orders" table="order">
+			<key>
+				<column name="consumer_id" not-null="true"/>
+			</key>
+			<one-to-many class="net.seniorsteps.senior.dal.entity.Order"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+Spring Configuration
+1. XML-Based
+	a) create xml configuration file
+	b) create ClassPathXmlApplicationContext
+	c) define your beans in the xml file
+	d) define your dependencies in the xml file
+2. Annotation-Based
+	A) Using with XML
+		1. add context.xml file, <context:annotation-config />
+		2. add context.xml file, <context:component-scan base-package="net.seniorsteps" />
+		3. use @Component for classes that need to be defined as beans.
+		4. use @Autowired for dependency injection
+	B) Using with Java
+		1. create @Configurtaion class
+		2. create AnnotationConfigApplicationContext
+		3. use @Component for classes that need to be defined as beans.
+		4. use @Autowired for dependency injection
+3. Java-Based
+	a) create @Configuration class
+	b) create AnnotationConfigApplicationContext
+	c) define @Bean in the @Configuration class
+	d) define dependencies using method params
